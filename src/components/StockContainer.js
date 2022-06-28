@@ -1,7 +1,7 @@
 import React from "react";
 import Stock from "./Stock";
 
-function StockContainer({ stocks, handleBoughtStock }) {
+function StockContainer({ stocks, onHandleBoughtStock }) {
 
   // useEffect(() => {
   //   fetch("http://localhost:3001/stocks")
@@ -10,7 +10,7 @@ function StockContainer({ stocks, handleBoughtStock }) {
 
   // }, [])
 
-  const stockComponent = stocks.map((stock) => <Stock key={stock.id} stock={stock} handleBoughtStock={handleBoughtStock} />)
+  const stockComponent = stocks.map((stock) => <Stock key={stock.id} stock={stock} onHandleStock={onHandleBoughtStock} />)
 
 
   return (

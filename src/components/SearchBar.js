@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
 function SearchBar({ stocks, setStocks }) {
-  const [category, setCategory] = useState("Tech")
+  const [category, setCategory] = useState("")
 
-  // function categoryChange() {
-  //   const filteredStocks = stocks.filter((stock) => stock.type === category)
-  //   setStocks(filteredStocks)
-  // }
+  function categoryChange(e) {
+    const filteredStocks = stocks.filter((stock) => stock.type.toLowerCase().includes(category.toLowerCase()))
+    setCategory(e.target.value)
+
+    setStocks(filteredStocks)
+  }
 
 
   return (
@@ -18,7 +20,8 @@ function SearchBar({ stocks, setStocks }) {
           value="Alphabetically"
           name="sort"
           checked={null}
-          onChange={null}
+          onChange=
+          {null}
 
         />
         Alphabetically
@@ -37,8 +40,8 @@ function SearchBar({ stocks, setStocks }) {
       <label>
         <strong>Filter:</strong>
         <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          // value={category}
+          onChange={categoryChange}
         // {null}
         >
           <option value="Tech">Tech</option>

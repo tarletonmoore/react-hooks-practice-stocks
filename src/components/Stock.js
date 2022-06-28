@@ -1,10 +1,10 @@
 import React from "react";
 
-function Stock({ stock, handleBoughtStock }) {
+function Stock({ stock, onHandleStock }) {
 
   function handleClick() {
     console.log("HI")
-    handleBoughtStock(stock)
+    onHandleStock(stock)
 
   }
 

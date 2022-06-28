@@ -8,6 +8,7 @@ function MainContainer() {
   const [portfolioStock, setPortfolioStock] = useState([])
 
 
+
   useEffect(() => {
     fetch("http://localhost:3001/stocks")
       .then((response) => response.json())
@@ -34,7 +35,7 @@ function MainContainer() {
       <SearchBar stocks={stocks} setStocks={setStocks} />
       <div className="row">
         <div className="col-8">
-          <StockContainer stocks={stocks} setStocks={setStocks} handleBoughtStock={handleBoughtStock} />
+          <StockContainer stocks={stocks} setStocks={setStocks} onHandleBoughtStock={handleBoughtStock} />
         </div>
         <div className="col-4">
           <PortfolioContainer portfolioStock={portfolioStock} setPortfolioStock={setPortfolioStock} />
