@@ -2,12 +2,19 @@ import React, { useState } from "react";
 
 function SearchBar({ stocks, setStocks }) {
   const [category, setCategory] = useState("")
+  // const [filteredStocks, setFilteredStocks] = useState(stocks)
 
   function categoryChange(e) {
-    const filteredStocks = stocks.filter((stock) => stock.type.toLowerCase().includes(category.toLowerCase()))
+    // setFilteredStocks(stocks)
     setCategory(e.target.value)
 
-    setStocks(filteredStocks)
+    const categoryFilter = stocks.filter((stock) => stock.type.toLowerCase() === e.target.value.toLowerCase())
+
+    // .includes(category.toLowerCase()))
+    // === e.target.value.toLowerCase())
+    setStocks(stocks)
+    // setFilteredStocks(categoryFilter)
+    setStocks(categoryFilter)
   }
 
 

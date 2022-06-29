@@ -4,7 +4,8 @@ function Stock({ stock, onHandleStock }) {
 
   function handleClick() {
     console.log("HI")
-    onHandleStock(stock)
+    if (onHandleStock)
+      onHandleStock(stock)
 
   }
 
