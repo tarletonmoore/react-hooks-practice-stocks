@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 
-function SearchBar({ stocks, setStocks }) {
-  const [category, setCategory] = useState("")
+function SearchBar({ category, setCategory, setSort }) {
+  // const [category, setCategory] = useState("")
   // const [filteredStocks, setFilteredStocks] = useState(stocks)
 
   function categoryChange(e) {
     // setFilteredStocks(stocks)
     setCategory(e.target.value)
+    // setAllStocks(allStocks)
 
-    const categoryFilter = stocks.filter((stock) => stock.type.toLowerCase() === e.target.value.toLowerCase())
+    // const categoryFilter = stocks.filter((stock) => stock.type.toLowerCase() === e.target.value.toLowerCase())
 
     // .includes(category.toLowerCase()))
     // === e.target.value.toLowerCase())
-    setStocks(stocks)
+    // setStocks(stocks)
     // setFilteredStocks(categoryFilter)
-    setStocks(categoryFilter)
+    // setStocks(categoryFilter)
+
   }
 
+  function handleSort(e) {
+    setSort(e.target.value)
+
+  }
 
   return (
     <div>
@@ -26,9 +32,10 @@ function SearchBar({ stocks, setStocks }) {
           type="radio"
           value="Alphabetically"
           name="sort"
-          checked={null}
-          onChange=
+          checked=
           {null}
+          onChange={handleSort}
+        // {null}
 
         />
         Alphabetically
@@ -39,7 +46,8 @@ function SearchBar({ stocks, setStocks }) {
           value="Price"
           name="sort"
           checked={null}
-          onChange={null}
+          onChange={handleSort}
+        // {null}
         />
         Price
       </label>
@@ -47,7 +55,7 @@ function SearchBar({ stocks, setStocks }) {
       <label>
         <strong>Filter:</strong>
         <select
-          // value={category}
+          value={category}
           onChange={categoryChange}
         // {null}
         >
